@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Container {
+  display: flex;
+  margin: 2% 0% 0% 0%;
+}
+
+.LeftPart {
+  width: 30%;
+  text-align: center;
+}
+
+.RightPart {
+  width: 70%;
+  text-align: center;
+}
