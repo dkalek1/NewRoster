@@ -3,24 +3,24 @@ import './style.css';
 import LeftPart from './Components/LeftPart';
 import RightPart from './Components/RightPart';
 import { DataContext } from './Context/DataContext';
+import week from '../CalenderData';
 
 export default function App() {
-  const [Data, setData] = useState({
+  const [data, setData] = useState({
+    input: { name: '', id: '' },
     worker: [],
-    date: [],
+    calenderDate: [week],
   });
+
+  console.log(week)
 
   return (
     <div className="Container">
-      <DataContext.Provider value={{ Data, setData }}>
+      <DataContext.Provider value={{ data, setData }}>
         <LeftPart />
         <RightPart />
       </DataContext.Provider>
     </div>
   );
 }
-
-// {
-//   "worker" : [],
-//   "date" : []
-// }
+// new Date(date.getFullYear(), date.getMonth(), calenderDay).getDay() == 0||6 ? true : false

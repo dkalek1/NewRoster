@@ -22,4 +22,3 @@ export default function uuid() {
   const result = Ary.join('');
   return result;
 }
-Footer;

@@ -1,34 +1,38 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, Fragment, useRef } from 'react';
 import { DataContext } from '../Context/DataContext';
+import uuid from '../hooks/useUuid';
 
 export default function Register() {
-  const { Data, setData } = useContext(DataContext);
-  const [input, setInput] = useState();
+  const { data, setData } = useContext(DataContext);
+  const focus = useRef();
 
   const onChange = (e) => {
-    const inputValue = e.target.value;
-    setInput(inputValue);
-    console.log(inputValue);
+    setData({
+      ...data,
+      input: { ...data.input, name: e.target.value, id: uuid() },
+    });
   };
 
-  const onClick = () => {
-    setList([...List, input]);
+  const onCreate = () => {
     setData({
-      ...Data,
-      worker: List,
+      ...data,
+      worker: data.worker.concat(data.input),
+      input: { ...data.input, name: '', id: '' },
     });
-    console.log(List);
-    console.log(Data);
+
+    focus.current.value = '';
+    focus.current.focus();
   };
 
   return (
-    <div className="Register">
+    <Fragment>
       <input
         type="text"
         placeholder="관등성명까지 입력해주세요"
         onChange={onChange}
+        ref={focus}
       />
-      <button onClick={onClick}>입력</button>
-    </div>
+      <button onClick={onCreate}>입력</button>
+    </Fragment>
   );
 }
