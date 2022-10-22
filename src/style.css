@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Container {
+  display: flex;
+  margin: 2% 0% 0% 0%;
+  height: 100%;
+}
+
+.LeftPart {
+  width: 20%;
+  text-align: center;
+}
+
+.RightPart {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+}
+
+table,
+tr,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  height: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.none {
+  display: none;
+}
+
+.dateButton {
+  width: 100%;
+  height: 100%;
+  padding: 20%;
+  border: 0;
+  background-color: transparent;
+}
+
+.dateButton:hover {
+  cursor: pointer;
+}
+
+.workerName {
+  color: black;
+}
+
+.days {
+  font-size: 1.25rem;
+}
+
+.header {
+  font-size: 2rem;
+}
